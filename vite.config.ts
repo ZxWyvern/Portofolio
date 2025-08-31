@@ -1,24 +1,25 @@
 
-  import { defineConfig } from 'vite';
-  import react from '@vitejs/plugin-react-swc';
-  import path from 'path';
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
 
-  export default defineConfig({
+export default defineConfig({
   base: process.env.VERCEL ? '/' : '/Portofolio/',
-    plugins: [react()],
+  plugins: [react()],
   publicDir: 'public',
-    resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  build: {
+    build: {
       target: 'esnext',
-      outDir: 'dist',
+      outDir: 'public',
     },
-    server: {
-      port: 3000,
-      open: true,
-    },
-  });
+  server: {
+    port: 3000,
+    open: true,
+  },
+
+});

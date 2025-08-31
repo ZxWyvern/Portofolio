@@ -3,6 +3,8 @@ import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import platImg from '../assets/images/2Dplat.png';
+import horrorImg from '../assets/images/UnityHorror.png';
 
 interface Project {
   title: string;
@@ -17,7 +19,7 @@ const projects: Project[] = [
   {
     title: "2D Platformer Game",
     description: "A classic 2D platformer game developed using Unity. Features include multiple levels, enemy AI, and smooth player controls.",
-    image: "/2Dplat.png",
+    image: platImg,
     technologies: ["Unity", "C#", "2D Art", "Puzzle"],
     liveUrl: "https://example.com/2d-platformer",
     githubUrl: "https://github.com/pandusatria/2d-platformer"
@@ -25,7 +27,7 @@ const projects: Project[] = [
   {
     title: "Horror Game : Facility breach: last shift ",
     description: "A deeply atmospheric psychological horror experience where haunting narratives and fragile character progression blur the line between fear and reality.",
-    image: "/UnityHorror.png",
+    image: horrorImg,
     technologies: ["Unity", "C#", "3D Modeling", "NavMeshAgent"],
     liveUrl: "https://example.com/rpg-adventure",
     githubUrl: "https://github.com/pandusatria/rpg-adventure"

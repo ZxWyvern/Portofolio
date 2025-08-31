@@ -2,5 +2,5 @@
 
   Run `npm i` to install the dependencies.
 
-  Run `npm run dev` to start the development server.
+  Run `cd Portofolio; npm run dev` to start the development server.q
   

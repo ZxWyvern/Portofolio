@@ -327,6 +327,22 @@ export function Hero() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
+            {/* 3D Spline Object */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="mb-6 rounded-lg overflow-hidden shadow-2xl"
+            >
+              <iframe
+                src='https://my.spline.design/genkubgreetingrobot-vvdd8wOcuFcBfdjNW1hc1JHO/'
+                frameBorder='0'
+                width='100%'
+                height='400'
+                className="rounded-lg"
+              ></iframe>
+            </motion.div>
+
             <Card className="bg-background/40 backdrop-blur-xl border-white/10 shadow-2xl overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 bg-muted/30 border-b border-white/10">
                 <div className="flex gap-2">
@@ -382,10 +398,6 @@ export function Hero() {
               transition={{ delay: 1.2 }}
               className="absolute -top-6 -right-6 bg-background/80 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-xl"
             >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">5+</div>
-                <div className="text-xs text-muted-foreground">Projects</div>
-              </div>
             </motion.div>
 
             <motion.div
@@ -401,7 +413,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
         </div>
-
+s
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

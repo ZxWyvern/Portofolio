@@ -6,7 +6,7 @@
   export default defineConfig({
   base: process.env.VERCEL ? '/' : '/Portofolio/',
     plugins: [react()],
-    publicDir: 'Public',
+  publicDir: 'public',
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {

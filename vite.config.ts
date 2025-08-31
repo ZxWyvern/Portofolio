@@ -6,7 +6,7 @@ import path from 'path';
 export default defineConfig({
   base: process.env.VERCEL ? '/' : '/Portofolio/',
   plugins: [react()],
-  publicDir: 'public',
+  publicDir: false,
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
     alias: {

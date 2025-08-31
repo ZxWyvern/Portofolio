@@ -25,16 +25,6 @@ const codeSnippets = [
   {
   PerAsperaAdAstra();
   }`,
-
-  `public enum Skills
-{
-    GameDeveloper,
-    GameDesign,
-    LevelDesign,
-    3DArtist,
-    2DArtist,
-    UI/UX Programmer
-}`,
   `void passion() {
   Debug.log("Turning ideas into reality");
 };`,
@@ -413,7 +403,7 @@ export function Hero() {
             </motion.div>
           </motion.div>
         </div>
-s
+
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

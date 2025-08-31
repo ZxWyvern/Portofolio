@@ -4,7 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
-    base: '/Portofolio/',
+  base: process.env.VERCEL ? '/' : '/Portofolio/',
     plugins: [react()],
     publicDir: 'Public',
     resolve: {

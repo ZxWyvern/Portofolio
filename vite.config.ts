@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    base: '/Portofolio/',
     plugins: [react()],
     publicDir: 'Public',
     resolve: {

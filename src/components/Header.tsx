@@ -99,9 +99,7 @@ export function Header() {
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => scrollToSection('hero')}
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-chart-1 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold">PSP</span>
-            </div>
+
             <div className="hidden sm:block">
               <div className="font-semibold text-foreground group-hover:text-primary transition-colors">
                 Pandu Satria Permana
@@ -155,12 +153,6 @@ export function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <div className="flex items-center gap-2 p-1 rounded-lg hover:bg-primary/10 cursor-pointer transition-colors group">
-                  <Avatar className="w-8 h-8 border-2 border-white/20 group-hover:border-primary/50 transition-colors">
-                    <AvatarImage src="" alt="Profile" />
-                    <AvatarFallback className="bg-gradient-to-br from-primary to-chart-1 text-white text-sm">
-                      AT
-                    </AvatarFallback>
-                  </Avatar>
                   <div className="hidden md:flex items-center gap-1">
                     <Badge variant="secondary" className="text-xs bg-chart-1/20 text-chart-1 border-chart-1/20">
                       Available

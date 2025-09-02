@@ -42,6 +42,18 @@ export function Skills() {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (expandedSkill) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [expandedSkill]);
+
   const getSkillsByCategory = (category: string) => {
     if (category === "All") return skills;
     return skills.filter(skill => skill.category === category);

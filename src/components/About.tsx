@@ -43,6 +43,23 @@ export function About() {
               <CardContent className="p-8">
                 <div className="space-y-6">
                   <div>
+                    <h3 className="mb-4">My Biodata</h3>
+                    <ul className="text-muted-foreground space-y-2">
+                      <li><strong>Full Name:</strong> Pandu Satria Permana</li>
+                      <li><strong>Age:</strong> 15</li>
+                      <li><strong>Date of Birth:</strong> 18-10-2009</li>
+                      <li><strong>Location:</strong> Jawa Barat, Kab.Bogor, Cisarua, Sampay</li>
+                      <li><strong>Education History:</strong>
+                        <ul className="ml-4 mt-2 space-y-1">
+                          <li><strong>SD (Elementary) 2016 - 2022:</strong> SDN Tugu Utara 02</li>
+                          <li><strong>SMP (Junior High) 2022 - 2025:</strong> SMP Negeri 02 Cisarua</li>
+                          <li><strong>SMK (Vocational High) 2025 - Now:</strong> SMK Wikrama Bogor</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
                     <h3 className="mb-4">My Journey</h3>
                     <p className="text-muted-foreground mb-4">
                       The first time I started making using Unity was about 1 year ago and at that time I was just messing 

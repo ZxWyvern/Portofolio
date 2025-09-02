@@ -1,3 +1,3 @@
-- [x] Correct package.json: merge "ependencies" into "dependencies" and fix typo
-- [x] Create vercel.json with Node.js 18
-- [x] Reinstall dependencies: remove node_modules and package-lock.json, then npm install
+- [x] Add useEffect to disable scroll when Skill Detail Modal is open
+- [x] Add useEffect to re-enable scroll when Skill Detail Modal is closed
+- [ ] Test modal behavior to ensure scroll is properly disabled/enabled

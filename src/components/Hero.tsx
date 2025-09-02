@@ -60,7 +60,6 @@ const techBadges = [
 
 export function Hero() {
   const [currentCodeIndex, setCurrentCodeIndex] = useState(0);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -77,48 +76,47 @@ export function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Dynamic gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary/5 to-primary/10"></div>
       
-      {/* Animated mesh gradient overlay */}
-      <div 
+      {/* Static mesh gradient overlay */}
+      <div
         className="absolute inset-0 opacity-30"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 40%)`,
+          background: `radial-gradient(600px circle at 50% 50%, rgba(29, 78, 216, 0.15), transparent 40%)`,
         }}
       ></div>
 
       {/* Floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden">
-        {Array.from({ length: 8 }).map((_, i) => (
+        {[
+          { left: "10%", top: "20%", delay: 0 },
+          { left: "80%", top: "30%", delay: 0.5 },
+          { left: "20%", top: "70%", delay: 1 },
+          { left: "90%", top: "80%", delay: 1.5 },
+          { left: "15%", top: "40%", delay: 2 },
+          { left: "85%", top: "60%", delay: 2.5 },
+          { left: "5%", top: "90%", delay: 3 },
+          { left: "95%", top: "10%", delay: 3.5 }
+        ].map((shape, i) => (
           <motion.div
             key={i}
             className="absolute w-4 h-4 bg-primary/10 rounded-full"
+            style={{
+              left: shape.left,
+              top: shape.top,
+            }}
             initial={{ opacity: 0 }}
             animate={{
               opacity: [0.1, 0.3, 0.1],
               scale: [1, 1.5, 1],
-              x: [0, Math.random() * 100 - 50, 0],
-              y: [0, Math.random() * 100 - 50, 0],
             }}
             transition={{
-              duration: 4 + Math.random() * 4,
+              duration: 4,
               repeat: Infinity,
-              delay: i * 0.5,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              delay: shape.delay,
             }}
           />
         ))}
@@ -153,7 +151,7 @@ export function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           
           {/* Left side - Main content */}
-          <motion.div 
+          <motion.div
             className="space-y-8"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -317,22 +315,6 @@ export function Hero() {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            {/* 3D Spline Object */}
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="mb-6 rounded-lg overflow-hidden shadow-2xl"
-            >
-              <iframe
-                src='https://my.spline.design/genkubgreetingrobot-vvdd8wOcuFcBfdjNW1hc1JHO/'
-                frameBorder='0'
-                width='100%'
-                height='400'
-                className="rounded-lg"
-              ></iframe>
-            </motion.div>
-
             <Card className="bg-background/40 backdrop-blur-xl border-white/10 shadow-2xl overflow-hidden">
               <div className="flex items-center gap-2 px-4 py-3 bg-muted/30 border-b border-white/10">
                 <div className="flex gap-2">
@@ -345,7 +327,7 @@ export function Hero() {
                   <span>PanduSatria.cs</span>
                 </div>
               </div>
-              
+
               <CardContent className="p-6 font-mono text-sm">
                 <motion.div
                   key={currentCodeIndex}
@@ -403,23 +385,6 @@ export function Hero() {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground"
-          >
-            <span className="text-xs">Scroll to explore</span>
-            <ChevronRight className="w-4 h-4 rotate-90" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

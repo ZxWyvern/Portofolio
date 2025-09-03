@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Label } from "./ui/label";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram } from "lucide-react";
 
 export function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
@@ -71,14 +71,15 @@ export function Contact() {
             <div>
               <h4 className="mb-4">Follow Me</h4>
               <div className="flex gap-4">
-                <Button variant="outline" size="icon">
-                  <Github className="w-5 h-5" />
+                <Button variant="outline" size="icon" asChild>
+                  <a href="https://github.com/zxwyvern" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-5 h-5" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon">
-                  <Linkedin className="w-5 h-5" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Twitter className="w-5 h-5" />
+                <Button variant="outline" size="icon" asChild>
+                  <a href="https://www.instagram.com/schreinaa/" target="_blank" rel="noopener noreferrer">
+                    <Instagram className="w-5 h-5" />
+                  </a>
                 </Button>
               </div>
             </div>
@@ -89,7 +90,7 @@ export function Contact() {
             <CardHeader>
               <CardTitle>Send Me a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and I'll get back to you as soon as possible.
+                (Is not functional yet, but feel free to fill it out!)
               </CardDescription>
             </CardHeader>
             <CardContent>

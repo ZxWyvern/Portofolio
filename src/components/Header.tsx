@@ -22,6 +22,7 @@ import {
   Github, 
   Linkedin, 
   Mail,
+  Instagram,
   Home,
   Code,
   Briefcase,
@@ -160,51 +161,6 @@ export function Header() {
                   </div>
                 </div>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56 bg-background/80 backdrop-blur-xl border-white/20">
-                <DropdownMenuLabel>
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium">Pandu Satria Permana</p>
-                    <p className="text-xs text-muted-foreground">Pandusatriapermana
-                      @smkwikrama.sch.id</p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="gap-2 cursor-pointer">
-                  <User className="w-4 h-4" />
-                  Profile
-                </DropdownMenuItem>
-                <DropdownMenuItem className="gap-2 cursor-pointer">
-                  <Settings className="w-4 h-4" />
-                  Settings
-                </DropdownMenuItem>
-                <DropdownMenuItem 
-                  className="gap-2 cursor-pointer"
-                  onClick={() => window.open('#', '_blank')}
-                >
-                  <Download className="w-4 h-4" />
-                  Download CV
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <div className="px-2 py-1">
-                  <p className="text-xs text-muted-foreground mb-2">Connect with me</p>
-                  <div className="flex gap-2">
-                    <Button variant="ghost" size="icon" className="w-7 h-7">
-                      <Github className="w-3 h-3" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="w-7 h-7">
-                      <Linkedin className="w-3 h-3" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="w-7 h-7">
-                      <Mail className="w-3 h-3" />
-                    </Button>
-                  </div>
-                </div>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem className="gap-2 cursor-pointer text-destructive hover:text-destructive">
-                  <LogOut className="w-4 h-4" />
-                  Sign out
-                </DropdownMenuItem>
-              </DropdownMenuContent>
             </DropdownMenu>
 
             {/* Mobile Menu */}
@@ -220,7 +176,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-80 bg-background/80 backdrop-blur-xl border-white/20">
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center gap-3 pb-6 border-b border-white/10">
+                  <div className="flex items-center p-4 gap-3 pb-6 border-b border-white/10">
                     <Avatar className="w-12 h-12 border-2 border-white/20">
                       <AvatarImage src="" alt="Profile" />
                       <AvatarFallback className="bg-gradient-to-br from-primary to-chart-1 text-white">
@@ -264,22 +220,39 @@ export function Header() {
                     </div>
                   </nav>
 
-                  <div className="pt-6 border-t border-white/10 space-y-4">
-                    <Button 
+                  <div className="pt-6 border-t p-3 border-white/10 space-y-4">
+                    <Button
                       onClick={toggleTheme}
-                      variant="outline" 
+                      variant="outline"
                       className="w-full gap-2 bg-background/50 border-white/20"
                     >
                       {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                       {isDarkMode ? 'Light Mode' : 'Dark Mode'}
                     </Button>
-                    <Button 
+                    <Button
                       onClick={() => scrollToSection('contact')}
                       className="w-full gap-2"
                     >
                       <Phone className="w-4 h-4" />
                       Get In Touch
                     </Button>
+
+                    {/* Social Links */}
+                  <div className="pt-4 border-t border-white/10 flex flex-col items-center">
+                      <p className="text-sm text-muted-foreground mb-3 text-center">Connect with me</p>
+                      <div className="flex gap-3">
+                        <Button variant="ghost" size="icon" asChild className="w-10 h-10">
+                          <a href="https://github.com/zxwyvern" target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4" />
+                          </a>
+                        </Button>
+                        <Button variant="ghost" size="icon" asChild className="w-10 h-10">
+                          <a href="https://www.instagram.com/schreinaa/">
+                            <Instagram className="w-4 h-4" />
+                          </a>
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </SheetContent>

@@ -14,6 +14,7 @@ import {
   Cloud,
   Play,
   Terminal,
+  Instagram,
   ChevronRight,
   Sparkles,
   Zap,
@@ -21,24 +22,37 @@ import {
 } from "lucide-react";
 
 const codeSnippets = [
-  `Void Start()
+  `void Start()
   {
-  PerAsperaAdAstra();
+      PerAsperaAdAstra();
+      Debug.Log("Game Begin");
+      Debug.Log("Ready to play");
   }`,
-  `void passion() {
-  Debug.log("Turning ideas into reality");
-};`,
-  `public struct PortfolioStatus
+
+`void PerAsperaAdAstra()
 {
-    public bool IsAvailable;
-    public string ProjectsCompleted;
-    public string ExperienceYears;
-}`,
-`PortfolioStatus myPortfolio = new PortfolioStatus();
-myPortfolio.IsAvailable = true;
-myPortfolio.ProjectsCompleted = "5+ Projects";
-myPortfolio.ExperienceYears = "1+ Years";`
+    Debug.Log("Through hardships we endure");
+    Debug.Log("Strength grows with each trial");
+    Debug.Log("Until we touch the stars");
+}`
+
+,
+
+  `public struct PortfolioStatus
+  {
+      public bool IsAvailable;
+      public string ExperienceYears;
+      public string Skills;
+  }`,
+
+  `PortfolioStatus myPortfolio = new PortfolioStatus();
+  myPortfolio.IsAvailable = true;
+  myPortfolio.ExperienceYears = "1+ Years";
+  myPortfolio.Skills = "C#, Unity";
+  myPortfolio.ExperienceYears = "1+ Years";
+  Debug.Log(myPortfolio);`,
 ];
+
 
 const floatingIcons = [
   { icon: Code, delay: 0, x: "10%", y: "20%" },
@@ -261,30 +275,18 @@ export function Hero() {
                   </motion.div>
                 </Button>
               </motion.div>
-              
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="gap-2 bg-background/50 backdrop-blur-sm border-white/20 hover:bg-background/70"
-                >
-                  <Download className="w-4 h-4" />
-                  Download CV
-                </Button>
-              </motion.div>
             </motion.div>
 
             {/* Social links */}
-            <motion.div 
+            <motion.div
               className="flex gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1 }}
             >
               {[
-                { icon: Github, href: "#", label: "GitHub" },
-                { icon: Linkedin, href: "#", label: "LinkedIn" },
-                { icon: Mail, href: "#", label: "Email" }
+                { icon: Github, href: "https://github.com/zxwyvern", label: "GitHub" },
+                { icon: Instagram, href: "https://www.instagram.com/schreinaa/", label: "Instagram" }
               ].map((social, index) => {
                 const IconComponent = social.icon;
                 return (
@@ -293,12 +295,15 @@ export function Hero() {
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <Button 
-                      variant="ghost" 
+                    <Button
+                      variant="ghost"
                       size="icon"
+                      asChild
                       className="bg-background/30 backdrop-blur-sm border border-white/10 hover:bg-background/50 hover:border-white/20"
                     >
-                      <IconComponent className="w-5 h-5" />
+                      <a href={social.href} target={social.href.startsWith('http') ? '_blank' : undefined} rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                        <IconComponent className="w-5 h-5" />
+                      </a>
                     </Button>
                   </motion.div>
                 );

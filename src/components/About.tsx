@@ -54,6 +54,7 @@ export function About() {
                           <li><strong>SD (Elementary) 2016 - 2022:</strong> SDN Tugu Utara 02</li>
                           <li><strong>SMP (Junior High) 2022 - 2025:</strong> SMP Negeri 02 Cisarua</li>
                           <li><strong>SMK (Vocational High) 2025 - Now:</strong> SMK Wikrama Bogor</li>
+                          <li><strong>╰┈➤ (Majoring) : </strong> PPLG (Software and Game Development)</li>
                         </ul>
                       </li>
                     </ul>

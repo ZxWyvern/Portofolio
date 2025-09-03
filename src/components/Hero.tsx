@@ -24,33 +24,33 @@ import {
 const codeSnippets = [
   `void Start()
   {
-      PerAsperaAdAstra();
-      Debug.Log("Game Begin");
-      Debug.Log("Ready to play");
-  }`,
+    PerAsperaAdAstra();
+    Debug.Log("Game Begin");
+    Debug.Log("Ready!");
+}`,
 
-`void PerAsperaAdAstra()
+`void PerAsperaAdAstra() 
 {
-    Debug.Log("Through hardships we endure");
-    Debug.Log("Strength grows with each trial");
-    Debug.Log("Until we touch the stars");
+    Debug.Log("Hardships we rise");
+    Debug.Log("Grow through trials");
+    Debug.Log("Reach the stars");
 }`
 
 ,
 
-  `public struct PortfolioStatus
-  {
-      public bool IsAvailable;
-      public string ExperienceYears;
-      public string Skills;
-  }`,
+  `public struct PortfolioStatus 
+{
+    public bool Avail;
+    public string Exp;
+    public string Skill;
+}`,
 
-  `PortfolioStatus myPortfolio = new PortfolioStatus();
-  myPortfolio.IsAvailable = true;
-  myPortfolio.ExperienceYears = "1+ Years";
-  myPortfolio.Skills = "C#, Unity";
-  myPortfolio.ExperienceYears = "1+ Years";
-  Debug.Log(myPortfolio);`,
+  `PortfolioStatus portofolio = 
+new PortfolioStatus();
+portofolio.Avail = true;
+portofolio.Exp = "1+ Years";
+portofolio.Skill = "C# Unity";
+Debug.Log(port.Exp + " " + port.Skill);`,
 ];
 
 
@@ -368,26 +368,7 @@ export function Hero() {
               </CardContent>
             </Card>
 
-            {/* Floating stats */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.2 }}
-              className="absolute -top-6 -right-6 bg-background/80 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-xl"
-            >
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 1.4 }}
-              className="absolute -bottom-6 -left-6 bg-background/80 backdrop-blur-xl border border-white/20 rounded-2xl p-4 shadow-xl"
-            >
-              <div className="text-center">
-                <div className="text-2xl font-bold text-chart-1">99%</div>
-                <div className="text-xs text-muted-foreground">Success Rate</div>
-              </div>
-            </motion.div>
+            
           </motion.div>
         </div>
       </div>

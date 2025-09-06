@@ -42,6 +42,17 @@ export function Skills() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Dynamically load Credly embed script
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "//cdn.credly.com/assets/utilities/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   useEffect(() => {
     if (expandedSkill) {
       document.body.style.overflow = 'hidden';
@@ -211,6 +222,14 @@ export function Skills() {
             </div>
           </CardContent>
         </Card>
+
+        {/* Credly Badge */}
+        <div className="mt-12 flex flex-col items-center">
+          <h3 className="text-xl font-semibold mb-4 text-center">Certifications</h3>
+          <div className="bg-background/40 backdrop-blur-lg border border-white/10 rounded-lg p-4 shadow-xl">
+            <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="7e00b106-8ece-41ff-ae60-6d1b88be7b07" data-share-badge-host="https://www.credly.com"></div>
+          </div>
+        </div>
 
         {/* Skill Detail Modal */}
         <AnimatePresence>

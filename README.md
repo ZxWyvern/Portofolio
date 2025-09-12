@@ -1,4 +1,4 @@
-## Cara run
+## Cara menjalankan kode
 
 Jalankan perintah berikut di terminal:
 

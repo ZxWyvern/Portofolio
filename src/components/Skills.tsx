@@ -20,7 +20,7 @@ const skills: Skill[] = [
   { name: "JavaScript", level: 20, category: "Language", icon: Code, description: "Familiar with JavaScript for web development." },
   { name: "HTML/CSS", level: 50, category: "Language", icon: Code, description: "Intermediate skills in HTML and CSS." },
   { name: "UI", level: 30, category: "UI/UX", icon: Layout, description: "UI design principles and tools." },
-  { name: "UX", level: 50, category: "UI/UX", icon: Monitor, description: "User experience design and research." },
+  { name: "UX", level: 50, category: "UI/UX", icon: Monitor, description: "Users experience design and research." },
 ];
 
 const categories = ["Language", "UI/UX"];

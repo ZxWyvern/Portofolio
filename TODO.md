@@ -1,3 +1,0 @@
-- [x] Add useEffect to disable scroll when Skill Detail Modal is open
-- [x] Add useEffect to re-enable scroll when Skill Detail Modal is closed
-- [ ] Test modal behavior to ensure scroll is properly disabled/enabled

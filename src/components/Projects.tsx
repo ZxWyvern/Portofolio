@@ -22,7 +22,7 @@ const projects: Project[] = [
     image: platImg,
     technologies: ["Unity", "C#", "2D Art", "Puzzle"],
     liveUrl: "https://example.com/2d-platformer",
-    githubUrl: "https://github.com/pandusatria/2d-platformer"
+    githubUrl: "https://github.com/ZxWyvern/CaptureTheFlag"
   },
   {
     title: "Horror Game : Facility breach: last shift ",
@@ -90,10 +90,12 @@ export function Projects() {
                     </Button>
                   )}
                   {project.githubUrl && (
-                    <Button variant="outline" size="sm" className="gap-2">
-                      <Github className="w-4 h-4" />
-                      Code (In Progress)
-                    </Button>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="gap-2">
+                        <Github className="w-4 h-4" />
+                        Code (In Progress)
+                      </Button>
+                    </a>
                   )}
                 </div>
               </CardContent>

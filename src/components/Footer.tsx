@@ -11,10 +11,7 @@ export function Footer() {
           </div>
 
         <div className="border-t border-border mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} Pandu Satria Permana. All rights reserved.
-            </p>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-4">
             <p className="text-muted-foreground text-sm flex items-center gap-1">
               Made with <Heart className="w-4 h-4 text-red-500 fill-current" />, React + Vite, and <Bot className="w-4 h-4 text-primary" />
             </p>

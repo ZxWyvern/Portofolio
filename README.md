@@ -1,6 +1,6 @@
-  ## Running the code
+## Cara menjalankan kode
 
-  Run `npm i` to install the dependencies.
+Jalankan perintah berikut di terminal:
 
-  Run `cd Portofolio; npm run dev` to start the development server.q
-  
+```bash
+npm run dev

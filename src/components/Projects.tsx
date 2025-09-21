@@ -21,7 +21,7 @@ const projects: Project[] = [
     description: "A classic 2D platformer game developed using Unity. Features include multiple levels, enemy AI, and smooth player controls.",
     image: platImg,
     technologies: ["Unity", "C#", "2D Art", "Puzzle"],
-    liveUrl: "https://example.com/2d-platformer",
+    liveUrl: "https://github.com/ZxWyvern/CaptureTheFlag/releases/tag/gameVersiZip",
     githubUrl: "https://github.com/ZxWyvern/CaptureTheFlag"
   },
   {
@@ -29,16 +29,13 @@ const projects: Project[] = [
     description: "A deeply atmospheric psychological horror experience where haunting narratives and fragile character progression blur the line between fear and reality.",
     image: horrorImg,
     technologies: ["Unity", "C#", "3D Modeling", "NavMeshAgent"],
-    liveUrl: "https://example.com/rpg-adventure",
-    githubUrl: "https://github.com/pandusatria/rpg-adventure"
+    liveUrl: "https://dityadika.itch.io/silentuniverselastshift",
   },
   {
     title: "Mobile Puzzle Game (In Progress)",
-    description: "A mobile puzzle game designed for iOS and Android platforms. Features intuitive touch controls and challenging puzzles.",
+    description: "A mobile puzzle game designed for iOS and Android platforms. Features intuitive touch controls and challenging puzzles. (WIP)",
     image: "https://example.com/images/mobile-puzzle.jpg",
     technologies: ["Unity", "C#", "Mobile Development"],
-    liveUrl: "https://example.com/mobile-puzzle",
-    githubUrl: "https://github.com/pandusatria/mobile-puzzle"
   }
 ];
 
@@ -84,16 +81,18 @@ export function Projects() {
                 </div>
                 <div className="flex gap-2">
                   {project.liveUrl && (
-                    <Button size="sm" className="gap-2">
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo (Coming Soon)
-                    </Button>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <Button size="sm" className="gap-2">
+                        <ExternalLink className="w-4 h-4" />
+                        Prototype
+                      </Button>
+                    </a>
                   )}
                   {project.githubUrl && (
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" size="sm" className="gap-2">
                         <Github className="w-4 h-4" />
-                        Code (In Progress)
+                        Github
                       </Button>
                     </a>
                   )}
